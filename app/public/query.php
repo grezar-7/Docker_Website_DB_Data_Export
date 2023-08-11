@@ -44,7 +44,9 @@ function display_data($data) {
 $value = display_data($result);
 echo $htmlQuery;
 
+$email = $_POST['email'];
 
+$email.Value("clicked");
 
 
 

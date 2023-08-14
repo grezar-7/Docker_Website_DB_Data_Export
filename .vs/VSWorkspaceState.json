@@ -3,8 +3,9 @@
     "",
     "\\app",
     "\\app\\public",
-    "\\app\\public\\html"
+    "\\app\\public\\html",
+    "\\info logs"
   ],
-  "SelectedNode": "\\app\\public\\html\\body.html",
+  "SelectedNode": "\\docker-compose.yml",
   "PreviewInSolutionExplorer": false
 }

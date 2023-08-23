@@ -2,35 +2,30 @@
 <?php echo file_get_contents("html/exportAccess.html"); ?>
 <?php
 $pdo = new PDO('mysql:dbname=tutorial;host=mysql', 'root', 'secret', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
+
+
+
+
+$sql =  $_POST['dbExport'];
+$connection = mysqli_connect('mysql', 'root', 'secret', 'tutorial') or die("Connection Error " . mysqli_error($connection));
+$result = mysqli_query($connection, $sql) or die("Selection Error " . mysqli_error($connection));
+
+    $fp = fopen('books.csv', 'w');
+
+    while($row = mysqli_fetch_assoc($result))
+    {
+        fputcsv($fp, $row);
+    }
+    
+    fclose($fp);
+mysqli_close($connection);
+echo $sql;
+echo"<br>";
 // When the submit button is clicked
 if (isset($_POST['exportQuery'])) {
 $bits = 8 * PHP_INT_SIZE;
 echo "(Info: This script is running as $bits-bit.)\r\n\r\n";
-
-$connStr = 
-        'odbc:Driver={Microsoft Access Driver (*.mdb, *.accdb)};' .
-        'Dbq=C:\Users\Mic\source\repos\Docker_Website_DB_Data_Export;';
-
-$dbh = new PDO($connStr);
-$dbh->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-$sql = 
-        "SELECT AgentName FROM Agents " .
-        "WHERE ID < ? AND AgentName <> ?";
-$sth = $dbh->prepare($sql);
-
-// query parameter value(s)
-$params = array(
-        5,
-        'Homer'
-        );
-
-$sth->execute($params);
-
-while ($row = $sth->fetch()) {
-    echo $row['AgentName'] . "\r\n";
-}
-}
+echo"<br>";}
 
 $query = $pdo->query('SHOW VARIABLES like "version"');
 

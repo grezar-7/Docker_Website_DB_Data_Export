@@ -85,3 +85,5 @@ $row = $query->fetch();
 echo 'MySQL version:' . $row['Value'];
 ?>
 <?php echo file_get_contents("html/footer.html"); ?>
+
+

@@ -6,6 +6,6 @@
     "\\app\\public\\html",
     "\\info logs"
   ],
-  "SelectedNode": "\\PHP.Dockerfile",
+  "SelectedNode": "\\app\\public\\index.php",
   "PreviewInSolutionExplorer": false
 }

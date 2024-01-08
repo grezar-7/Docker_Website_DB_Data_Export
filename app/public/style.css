@@ -1,8 +1,5 @@
 header {
-    background-color: orange;
-}
-
-ul {
-    color: green;
-    margin-left: 20px;
+    background-color: darkorange;
+    color: forestgreen;
+    border-right-color: orangered;
 }

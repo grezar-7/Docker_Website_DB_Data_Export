@@ -1,6 +1,10 @@
 <?php echo file_get_contents("html/header.html"); ?>
 <?php echo file_get_contents("html/exportAccess.html"); ?>
+        <meta charset="""UTF-8">
+        <meta name="description" contents="Banyon Test of a PHP Server Website">
+        <link rel="stylesheet" href="style.css">
 <?php
+
 $pdo = new PDO('mysql:dbname=tutorial;host=mysql', 'root', 'secret', [PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION]);
 
 

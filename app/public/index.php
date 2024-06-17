@@ -44,6 +44,40 @@ if (isset($_POST['submit'])) {
     echo "<h1><i> Good Morning, $fNameSQL $lNameSQL </i></h1>";
 }
 
+
+//change query csv and download
+// When the submit button is clicked
+$fileName = "books.csv";
+if (isset($_POST['exportQuery'])) {
+	$sql =  $_POST['dbExport'];
+    if($sql == null){
+    //function does nothing if there is no query
+    }
+    else{
+$connection = mysqli_connect('mysql', 'root', 'secret', 'tutorial') or die("Connection Error " . mysqli_error($connection));
+$result = mysqli_query($connection, $sql) or die("Selection Error " . mysqli_error($connection));
+
+    $fp = fopen('books.csv', 'w');
+
+    while($row = mysqli_fetch_assoc($result))
+    {
+        fputcsv($fp, $row);
+    }
+    
+    fclose($fp);
+mysqli_close($connection);
+echo $sql;
+
+$bits = 8 * PHP_INT_SIZE;
+echo "(Info: This script is running as $bits-bit.)\r\n\r\n";
+echo"<br>";}}
+?>
+
+<a href="books.csv" download>
+ <img src="image_2023_11_03T18_24_20_170Z.png" alt="alt_text">
+</a>
+
+
 $query = $pdo->query('SHOW VARIABLES like "version"');
 
 $row = $query->fetch();
@@ -51,3 +85,5 @@ $row = $query->fetch();
 echo 'MySQL version:' . $row['Value'];
 ?>
 <?php echo file_get_contents("html/footer.html"); ?>
+
+

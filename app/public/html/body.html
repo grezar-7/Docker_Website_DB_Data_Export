@@ -1,7 +1,13 @@
-<p>This is the test of Banyon's proof of concept PHP Server Website. Below will be a box and a button. Please write something in the box and then push the button. It should go into the database. </p>
+ <p>This is the test of Banyon's proof of concept PHP Server Website. Below will be a box and a button. Please write something in the box and then push the button. It should go into the database. </p>
+ <head>
+     <meta charset="" "UTF-8">
+     <meta name="description" contents="Banyon Test of a PHP Server Website">
+     <link rel="stylesheet" href="/style2.css">
 
+ </head>
 <!-- HTML form  -->
 <form method="POST">
+
     <h4>TEST Email for identification : </h4>
     <input type="text" name="email"><br>
     <h4>TEST First Name : </h4>
@@ -10,4 +16,19 @@
     <input type="text" name="l_name"><br><br>
     <input type="submit" value="Display" id="btnSubmit" name="submit">
     <label id="lblSubmit" for="btnSubmit">Login Test</label>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <h4>Enter Query : </h4>
+    <input type="text" name="dbExport"><br>
+    <input type="submit" value="Export Query" id="btnExportQuery" name="exportQuery">
+    <label id="lblExport" for="btnExportQuery"></label>
+
+    <a href="books.csv" download>Download File</a>
+
+
 </form>

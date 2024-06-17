@@ -41,9 +41,8 @@ function display_data($data) {
  $output .= '</table>';
  echo $output;
 }
-display_data($result);
+$value = display_data($result);
 echo $htmlQuery;
-
 
 
 
@@ -58,3 +57,10 @@ echo $htmlQuery;
 
 //load webpage UI footer
 echo file_get_contents("html/footer.html"); ?>
+
+<div id="showQuery1">
+        {query4DB1}
+    </div>
+    <label><?php echo $value; ?></label>
+
+    e

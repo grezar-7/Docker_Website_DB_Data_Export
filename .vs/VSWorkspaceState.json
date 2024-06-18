@@ -3,9 +3,15 @@
     "",
     "\\app",
     "\\app\\public",
-    "\\app\\public\\html",
-    "\\info logs"
+    "\\mysqldata\\sys",
+    "\\src",
+    "\\usr",
+    "\\usr\\local",
+    "\\usr\\local\\bin",
+    "\\var",
+    "\\var\\www",
+    "\\var\\www\\html"
   ],
-  "SelectedNode": "\\app\\public\\index.php",
+  "SelectedNode": "\\app\\public\\html\\test.html",
   "PreviewInSolutionExplorer": false
 }

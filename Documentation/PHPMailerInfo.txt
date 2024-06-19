@@ -1,0 +1,14 @@
+Program uses PHPMAiler.
+Github location is: https://github.com/PHPMailer/PHPMailer
+
+It is recommended to use Composer to handle PHP dependancies like PHPMailer.
+Composer installing info is located at: https://getcomposer.org/
+Here is documentation for example composer.json: https://www.drupal.org/docs/develop/using-composer/add-a-composerjson-file
+
+This program uses docker for image control. 
+Docker's main page is located: https://www.docker.com/
+The required files for this program is PHP.Dockerfile and docker-compose.yml. 
+CMD commands for this project's folder is 'docker-compose build' and then 'docker-compose up'.
+On one computer/server it is only required to run 'docker-compose build' once and only run again if any changes were made to either docker files.
+
+Documentation for PHPMailer working with a Dreamhost Shared Server is located: https://help.dreamhost.com/hc/en-us/articles/360031174411-PHPMailer-Installing-on-a-shared-server
